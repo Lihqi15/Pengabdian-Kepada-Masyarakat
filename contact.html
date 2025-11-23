@@ -6,20 +6,13 @@
   <title>Contact | SMP Poris Indah</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Warna utama */
     .bg-soft-white { background-color: #f6f7f8; }
     .text-logo { color: #003399; }
     .bg-logo { background-color: #003399; }
-
-    /* Biru lembut */
     .bg-soft-blue { background-color: #e8ecfa; }
 
-    /* Dropdown */
-    .dropdown-menu a:hover {
-      background-color: #002b80;
-    }
+    .dropdown-menu a:hover { background-color: #002b80; }
 
-    /* Efek animasi teks */
     .fade-up {
       opacity: 0;
       transform: translateY(30px);
@@ -31,7 +24,6 @@
     }
   </style>
 </head>
-
 <body class="font-sans bg-soft-white text-gray-800">
 
   <!-- HEADER -->
@@ -39,24 +31,19 @@
     <div class="max-w-6xl mx-auto flex items-center justify-between py-4 px-6">
       <!-- Logo -->
       <div class="flex items-center space-x-3">
-        <img src="Logo SMP.png" alt="Logo SMP Poris Indah" class="h-10 w-auto" />
+        <img src="foto/Logo SMP.png" alt="Logo SMP Poris Indah" class="h-10 w-auto" />
         <h1 class="text-xl font-semibold text-logo">SMP Poris Indah</h1>
       </div>
 
-      <!-- Navigation -->
-      <nav>
-        <ul class="hidden md:flex items-center space-x-8 font-medium">
+      <!-- Desktop Menu -->
+      <nav class="hidden md:flex">
+        <ul class="items-center space-x-8 font-medium flex">
           <li><a href="index.html" class="hover:text-logo transition">Home</a></li>
-
-          <!-- Dropdown Menu -->
           <li class="relative">
             <button id="dropdownButton" class="flex items-center hover:text-logo transition focus:outline-none">
               SMP ▾
             </button>
-            <ul
-              id="dropdownMenu"
-              class="absolute left-0 top-full hidden flex-col bg-logo text-white rounded-lg shadow-lg mt-2 w-48 overflow-hidden dropdown-menu"
-            >
+            <ul id="dropdownMenu" class="absolute left-0 top-full hidden flex-col bg-logo text-white rounded-lg shadow-lg mt-2 w-48 overflow-hidden dropdown-menu">
               <li><a href="about.html" class="block px-4 py-2">About Us</a></li>
               <li><a href="curriculum.html" class="block px-4 py-2">Curriculum</a></li>
               <li><a href="facility.html" class="block px-4 py-2">Facility</a></li>
@@ -64,7 +51,6 @@
               <li><a href="achievement.html" class="block px-4 py-2">Achievement</a></li>
             </ul>
           </li>
-
           <li><a href="gallery.html" class="hover:text-logo transition">Gallery</a></li>
           <li><a href="news.html" class="hover:text-logo transition">News</a></li>
           <li><a href="events.html" class="hover:text-logo transition">Events</a></li>
@@ -72,7 +58,40 @@
           <li><a href="contact.html" class="text-logo font-semibold">Contact</a></li>
         </ul>
       </nav>
+
+      <!-- Hamburger Mobile -->
+      <div class="md:hidden">
+        <button id="mobile-menu-button" class="focus:outline-none">
+          <svg class="h-6 w-6 text-logo" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
     </div>
+
+    <!-- Mobile Menu -->
+    <nav id="mobile-menu" class="hidden md:hidden bg-soft-white">
+      <ul class="flex flex-col space-y-2 py-4 px-6 font-medium">
+        <li><a href="index.html" class="hover:text-logo transition block">Home</a></li>
+        <li>
+          <button id="mobile-dropdown-button" class="w-full text-left flex justify-between items-center hover:text-logo transition focus:outline-none">
+            SMP ▾
+          </button>
+          <ul id="mobile-dropdown" class="hidden flex-col bg-logo text-white rounded-lg overflow-hidden mt-2">
+            <li><a href="about.html" class="block px-4 py-2">About Us</a></li>
+            <li><a href="curriculum.html" class="block px-4 py-2">Curriculum</a></li>
+            <li><a href="facility.html" class="block px-4 py-2">Facility</a></li>
+            <li><a href="extracurricular.html" class="block px-4 py-2">Extracurricular</a></li>
+            <li><a href="achievement.html" class="block px-4 py-2">Achievement</a></li>
+          </ul>
+        </li>
+        <li><a href="gallery.html" class="hover:text-logo transition block">Gallery</a></li>
+        <li><a href="news.html" class="hover:text-logo transition block">News</a></li>
+        <li><a href="events.html" class="hover:text-logo transition block">Events</a></li>
+        <li><a href="career.html" class="hover:text-logo transition block">Career</a></li>
+        <li><a href="contact.html" class="text-logo font-semibold block">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
   <!-- HERO -->
@@ -183,19 +202,26 @@
 
   <!-- SCRIPT -->
   <script>
-    // Dropdown
+    // Desktop Dropdown
     const dropdownButton = document.getElementById("dropdownButton");
     const dropdownMenu = document.getElementById("dropdownMenu");
-    dropdownButton.addEventListener("click", () => {
-      dropdownMenu.classList.toggle("hidden");
-    });
+    dropdownButton.addEventListener("click", () => { dropdownMenu.classList.toggle("hidden"); });
     window.addEventListener("click", (e) => {
       if (!dropdownButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
         dropdownMenu.classList.add("hidden");
       }
     });
 
-    // Animasi Scroll
+    // Mobile Menu Toggle
+    const mobileMenuButton = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+    mobileMenuButton.addEventListener("click", () => { mobileMenu.classList.toggle("hidden"); });
+
+    const mobileDropdownButton = document.getElementById("mobile-dropdown-button");
+    const mobileDropdown = document.getElementById("mobile-dropdown");
+    mobileDropdownButton.addEventListener("click", () => { mobileDropdown.classList.toggle("hidden"); });
+
+    // Scroll Animasi
     const fadeEls = document.querySelectorAll(".fade-up");
     const showOnScroll = () => {
       const trigger = window.innerHeight * 0.9;
@@ -209,4 +235,3 @@
   </script>
 </body>
 </html>
-
