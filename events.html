@@ -6,20 +6,13 @@
   <title>Events | SMP Poris Indah</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Warna utama */
     .bg-soft-white { background-color: #f6f7f8; }
     .text-logo { color: #003399; }
     .bg-logo { background-color: #003399; }
-
-    /* Biru lembut */
     .bg-soft-blue { background-color: #e8ecfa; }
 
-    /* Dropdown */
-    .dropdown-menu a:hover {
-      background-color: #002b80;
-    }
+    .dropdown-menu a:hover { background-color: #002b80; }
 
-    /* Efek animasi teks */
     .fade-up {
       opacity: 0;
       transform: translateY(30px);
@@ -41,18 +34,15 @@
         <h1 class="text-xl font-semibold text-logo">SMP Poris Indah</h1>
       </div>
 
-      <nav>
-        <ul class="hidden md:flex items-center space-x-8 font-medium">
+      <!-- Desktop Menu -->
+      <nav class="hidden md:flex">
+        <ul class="items-center space-x-8 font-medium flex">
           <li><a href="index.html" class="hover:text-[#003399] transition">Home</a></li>
-
           <li class="relative">
             <button id="dropdownButton" class="flex items-center hover:text-[#003399] transition focus:outline-none">
               SMP ▾
             </button>
-            <ul
-              id="dropdownMenu"
-              class="absolute left-0 top-full hidden flex-col bg-[#003399] text-white rounded-lg shadow-lg mt-2 w-48 overflow-hidden dropdown-menu"
-            >
+            <ul id="dropdownMenu" class="absolute left-0 top-full hidden flex-col bg-[#003399] text-white rounded-lg shadow-lg mt-2 w-48 overflow-hidden dropdown-menu">
               <li><a href="about.html" class="block px-4 py-2">About Us</a></li>
               <li><a href="curriculum.html" class="block px-4 py-2">Curriculum</a></li>
               <li><a href="facility.html" class="block px-4 py-2">Facility</a></li>
@@ -60,7 +50,6 @@
               <li><a href="achievement.html" class="block px-4 py-2">Achievement</a></li>
             </ul>
           </li>
-
           <li><a href="gallery.html" class="hover:text-[#003399] transition">Gallery</a></li>
           <li><a href="news.html" class="hover:text-[#003399] transition">News</a></li>
           <li><a href="events.html" class="text-[#003399] font-semibold">Events</a></li>
@@ -68,7 +57,40 @@
           <li><a href="contact.html" class="hover:text-[#003399] transition">Contact</a></li>
         </ul>
       </nav>
+
+      <!-- Hamburger Mobile -->
+      <div class="md:hidden">
+        <button id="mobile-menu-button" class="focus:outline-none">
+          <svg class="h-6 w-6 text-logo" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
     </div>
+
+    <!-- Mobile Menu -->
+    <nav id="mobile-menu" class="hidden md:hidden bg-soft-white">
+      <ul class="flex flex-col space-y-2 py-4 px-6 font-medium">
+        <li><a href="index.html" class="hover:text-[#003399] transition block">Home</a></li>
+        <li>
+          <button id="mobile-dropdown-button" class="w-full text-left flex justify-between items-center hover:text-[#003399] transition focus:outline-none">
+            SMP ▾
+          </button>
+          <ul id="mobile-dropdown" class="hidden flex-col bg-[#003399] text-white rounded-lg overflow-hidden mt-2">
+            <li><a href="about.html" class="block px-4 py-2">About Us</a></li>
+            <li><a href="curriculum.html" class="block px-4 py-2">Curriculum</a></li>
+            <li><a href="facility.html" class="block px-4 py-2">Facility</a></li>
+            <li><a href="extracurricular.html" class="block px-4 py-2">Extracurricular</a></li>
+            <li><a href="achievement.html" class="block px-4 py-2">Achievement</a></li>
+          </ul>
+        </li>
+        <li><a href="gallery.html" class="hover:text-[#003399] transition block">Gallery</a></li>
+        <li><a href="news.html" class="hover:text-[#003399] transition block">News</a></li>
+        <li><a href="events.html" class="text-[#003399] font-semibold block">Events</a></li>
+        <li><a href="career.html" class="hover:text-[#003399] transition block">Career</a></li>
+        <li><a href="contact.html" class="hover:text-[#003399] transition block">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
   <!-- HERO -->
@@ -83,17 +105,11 @@
 
     <!-- Event Card 1 -->
     <div class="bg-soft-white border border-gray-200 rounded-xl shadow-md p-8 hover:shadow-lg transition">
-      
-      <!-- Foto Event -->
-      <img src="foto\picture6.jpg" 
-           alt="Perayaan Hari Guru Nasional"
-           class="w-full h-100 object-cover rounded-lg mb-6">
-
+      <img src="picture6.jpg" alt="Perayaan Hari Guru Nasional" class="w-full h-100 object-cover rounded-lg mb-6">
       <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
         <h4 class="text-xl font-bold text-gray-800">Perayaan Hari Guru Nasional 2025</h4>
         <p class="text-gray-500 text-sm mt-2 md:mt-0">Dilaksanakan pada: Selasa, 25 November 2025</p>
       </div>
-
       <p class="text-gray-700 mb-4">
         Dalam rangka memperingati Hari Guru Nasional, SMP Poris Indah mengadakan upacara, lomba apresiasi guru, dan pentas seni yang melibatkan seluruh siswa dan tenaga pendidik.
       </p>
@@ -102,29 +118,21 @@
 
     <!-- Event Card 2 -->
     <div class="bg-soft-white border border-gray-200 rounded-xl shadow-md p-8 hover:shadow-lg transition mt-8">
-
-      <!-- Foto Event -->
-      <img src="foto\PKM.jpg" 
-           alt="Kegiatan PKM"
-           class="w-full h-100 object-cover rounded-lg mb-6">
-
+      <img src="PKM.jpg" alt="Kegiatan PKM" class="w-full h-100 object-cover rounded-lg mb-6">
       <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
         <h4 class="text-xl font-bold text-gray-800">
           Pengabdian Kepada Masyarakat (PKM) – Implementasi dan Pengembangan Website Profil Sekolah
         </h4>
         <p class="text-gray-500 text-sm mt-2 md:mt-0">Dilaksanakan pada: Selasa, 25 November 2025</p>
       </div>
-
       <p class="text-gray-700 mb-4">
         Mahasiswa semester 5 Program Studi Teknik Informatika Universitas Pamulang melaksanakan kegiatan PKM dengan judul
         <strong>"Implementasi dan Pengembangan Website Profil Sekolah untuk Meningkatkan Kualitas Informasi dan Tampilan Website Sekolah SMP Poris Indah"</strong>.
       </p>
-
       <p class="text-gray-700 mb-4">
         Kegiatan ini bertujuan untuk membantu SMP Poris Indah dalam meningkatkan kualitas penyajian informasi,
         memperbaiki tampilan website, serta mengoptimalkan fitur-fitur yang dibutuhkan sekolah untuk publikasi informasi.
       </p>
-
       <p class="text-gray-600 text-sm italic">Lokasi: SMP Poris Indah</p>
     </div>
 
@@ -148,19 +156,26 @@
 
   <!-- SCRIPT -->
   <script>
+    // Desktop Dropdown
     const dropdownButton = document.getElementById("dropdownButton");
     const dropdownMenu = document.getElementById("dropdownMenu");
-
-    dropdownButton.addEventListener("click", () => {
-      dropdownMenu.classList.toggle("hidden");
-    });
-
+    dropdownButton.addEventListener("click", () => { dropdownMenu.classList.toggle("hidden"); });
     window.addEventListener("click", (e) => {
       if (!dropdownButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
         dropdownMenu.classList.add("hidden");
       }
     });
 
+    // Mobile Menu Toggle
+    const mobileMenuButton = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+    mobileMenuButton.addEventListener("click", () => { mobileMenu.classList.toggle("hidden"); });
+
+    const mobileDropdownButton = document.getElementById("mobile-dropdown-button");
+    const mobileDropdown = document.getElementById("mobile-dropdown");
+    mobileDropdownButton.addEventListener("click", () => { mobileDropdown.classList.toggle("hidden"); });
+
+    // Scroll Animasi
     const fadeEls = document.querySelectorAll(".fade-up");
     const showOnScroll = () => {
       const trigger = window.innerHeight * 0.9;
@@ -172,7 +187,5 @@
     window.addEventListener("scroll", showOnScroll);
     showOnScroll();
   </script>
-
 </body>
 </html>
-
