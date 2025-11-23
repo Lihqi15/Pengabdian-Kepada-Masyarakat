@@ -7,9 +7,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     /* Warna biru logo */
-    .text-logo {
-      color: #003399;
-    }
+    .text-logo { color: #003399; }
 
     /* Efek animasi teks */
     .fade-up {
@@ -27,85 +25,86 @@
       background-image: url('SMP.jpg');
       background-size: cover;
       background-position: center;
-      background-attachment: fixed;
       position: relative;
     }
     .hero-bg::before {
       content: "";
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: rgb(25, 0, 150);
+      background: rgba(25, 0, 150);
+      z-index: 0;
     }
 
     /* Logo agar tidak crop */
-    .logo-img {
-      height: 60px;
-      width: auto;
-      object-fit: contain;
-    }
+    .logo-img { height: 60px; width: auto; object-fit: contain; }
 
-    /* Warna putih lembut (sesuai background logo) */
-    .bg-soft-white {
-      background-color: #f6f7f8;
-    }
+    /* Warna putih lembut */
+    .bg-soft-white { background-color: #f6f7f8; }
   </style>
 </head>
 <body class="font-sans text-gray-800 bg-soft-white">
 
   <!-- Navbar -->
-<nav class="bg-soft-white shadow fixed top-0 left-0 w-full z-50">
-  <div class="max-w-6xl mx-auto flex items-center justify-between py-4 px-6">
-    <!-- Logo -->
-    <div class="flex items-center space-x-3">
-      <img src="Logo SMP.png" alt="Logo SMP Poris Indah" class="h-10 w-auto" />
-      <h1 class="text-xl font-semibold text-logo">SMP Poris Indah</h1>
+  <nav class="bg-soft-white shadow fixed top-0 left-0 w-full z-50">
+    <div class="max-w-6xl mx-auto flex items-center justify-between py-4 px-6">
+      <!-- Logo -->
+      <div class="flex items-center space-x-3">
+        <img src="Logo SMP.png" alt="Logo SMP Poris Indah" class="logo-img" />
+        <h1 class="text-xl font-semibold text-logo">SMP Poris Indah</h1>
+      </div>
+
+      <!-- Hamburger Menu (Mobile) -->
+      <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <!-- Menu Desktop -->
+      <ul class="hidden md:flex items-center space-x-8 font-medium text-gray-700">
+        <li><a href="index.html" class="hover:text-[#003399] transition">Home</a></li>
+        <li class="relative">
+          <button id="dropdownButton" class="flex items-center hover:text-[#003399] transition focus:outline-none">
+            SMP ▾
+          </button>
+          <ul
+            id="dropdownMenu"
+            class="absolute left-0 top-full hidden flex-col bg-[#003399] text-white rounded-lg shadow-lg mt-2 w-48 overflow-hidden dropdown-menu"
+          >
+            <li><a href="about.html" class="block px-4 py-2 hover:bg-[#002b80]">About Us</a></li>
+            <li><a href="curriculum.html" class="block px-4 py-2 hover:bg-[#002b80]">Curriculum</a></li>
+            <li><a href="facility.html" class="block px-4 py-2 hover:bg-[#002b80]">Facility</a></li>
+            <li><a href="extracurricular.html" class="block px-4 py-2 hover:bg-[#002b80]">Extracurricular</a></li>
+            <li><a href="achievement.html" class="block px-4 py-2 hover:bg-[#002b80]">Achievement</a></li>
+          </ul>
+        </li>
+        <li><a href="gallery.html" class="hover:text-[#003399] transition">Gallery</a></li>
+        <li><a href="news.html" class="hover:text-[#003399] transition">News</a></li>
+        <li><a href="events.html" class="hover:text-[#003399] transition">Events</a></li>
+        <li><a href="career.html" class="hover:text-[#003399] transition">Career</a></li>
+        <li><a href="contact.html" class="hover:text-[#003399] transition">Contact</a></li>
+      </ul>
     </div>
 
-    <!-- Menu -->
-    <ul class="hidden md:flex items-center space-x-8 font-medium text-gray-700">
-      <li><a href="index.html" class="hover:text-[#003399] transition">Home</a></li>
-
-      <!-- Dropdown -->
-      <li class="relative">
-        <button id="dropdownButton" class="flex items-center hover:text-[#003399] transition focus:outline-none">
-          SMP ▾
-        </button>
-        <ul
-          id="dropdownMenu"
-          class="absolute left-0 top-full hidden flex-col bg-[#003399] text-white rounded-lg shadow-lg mt-2 w-48 overflow-hidden dropdown-menu"
-        >
-          <li><a href="about.html" class="block px-4 py-2 hover:bg-[#002b80]">About Us</a></li>
-          <li><a href="curriculum.html" class="block px-4 py-2 hover:bg-[#002b80]">Curriculum</a></li>
-          <li><a href="facility.html" class="block px-4 py-2 hover:bg-[#002b80]">Facility</a></li>
-          <li><a href="extracurricular.html" class="block px-4 py-2 hover:bg-[#002b80]">Extracurricular</a></li>
-          <li><a href="achievement.html" class="block px-4 py-2 hover:bg-[#002b80]">Achievement</a></li>
-        </ul>
-      </li>
-
-      <li><a href="gallery.html" class="hover:text-[#003399] transition">Gallery</a></li>
-      <li><a href="news.html" class="hover:text-[#003399] transition">News</a></li>
-      <li><a href="events.html" class="hover:text-[#003399] transition">Events</a></li>
-      <li><a href="career.html" class="hover:text-[#003399] transition">Career</a></li>
-      <li><a href="contact.html" class="hover:text-[#003399] transition">Contact</a></li>
-    </ul>
-  </div>
-</nav>
-
-  <!-- Dropdown Script -->
-  <script>
-  const dropdownButton = document.getElementById("dropdownButton");
-  const dropdownMenu = document.getElementById("dropdownMenu");
-
-  dropdownButton.addEventListener("click", () => {
-    dropdownMenu.classList.toggle("hidden");
-  });
-
-  window.addEventListener("click", (e) => {
-    if (!dropdownButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
-      dropdownMenu.classList.add("hidden");
-    }
-  });
-</script>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-soft-white px-6 pb-4">
+      <a href="index.html" class="block py-2 hover:text-[#003399] transition">Home</a>
+      <button class="w-full text-left py-2 hover:text-[#003399] transition" id="mobile-dropdown-button">SMP ▾</button>
+      <div id="mobile-dropdown" class="hidden pl-4">
+        <a href="about.html" class="block py-1 hover:text-[#003399] transition">About Us</a>
+        <a href="curriculum.html" class="block py-1 hover:text-[#003399] transition">Curriculum</a>
+        <a href="facility.html" class="block py-1 hover:text-[#003399] transition">Facility</a>
+        <a href="extracurricular.html" class="block py-1 hover:text-[#003399] transition">Extracurricular</a>
+        <a href="achievement.html" class="block py-1 hover:text-[#003399] transition">Achievement</a>
+      </div>
+      <a href="gallery.html" class="block py-2 hover:text-[#003399] transition">Gallery</a>
+      <a href="news.html" class="block py-2 hover:text-[#003399] transition">News</a>
+      <a href="events.html" class="block py-2 hover:text-[#003399] transition">Events</a>
+      <a href="career.html" class="block py-2 hover:text-[#003399] transition">Career</a>
+      <a href="contact.html" class="block py-2 hover:text-[#003399] transition">Contact</a>
+    </div>
+  </nav>
 
   <!-- Hero Section -->
   <section class="hero-bg text-center pt-40 pb-32 relative">
@@ -122,7 +121,7 @@
 
   <!-- About Section -->
   <section class="max-w-5xl mx-auto py-16 px-6 bg-soft-white">
-    <h2 class="text-3xl font-bold text-center text-logo mb-8 fade-up">Tentang Kami</h2>
+    <h2 class="text-2xl sm:text-3xl font-bold text-center text-logo mb-8 fade-up">Tentang Kami</h2>
     <p class="text-gray-700 leading-relaxed text-justify fade-up">
       <strong>SMP Poris Indah</strong> adalah lembaga pendidikan yang berkomitmen membentuk peserta didik agar menjadi pribadi yang unggul, disiplin,
       dan berakhlak mulia. Dengan suasana belajar yang kondusif serta dukungan guru profesional, kami mendorong siswa untuk terus berkembang dalam
@@ -136,8 +135,8 @@
 
   <!-- Motto Section -->
   <section class="bg-gradient-to-r from-blue-900 to-indigo-800 text-white py-16 text-center">
-    <h2 class="text-3xl font-bold mb-6 fade-up">Motto Sekolah</h2>
-    <p class="max-w-3xl mx-auto text-xl italic fade-up">“Belajar, Berakhlak, dan Berprestasi.”</p>
+    <h2 class="text-2xl sm:text-3xl font-bold mb-6 fade-up">Motto Sekolah</h2>
+    <p class="max-w-3xl mx-auto text-lg sm:text-xl italic fade-up">“Belajar, Berakhlak, dan Berprestasi.”</p>
     <p class="mt-4 max-w-2xl mx-auto text-indigo-200 fade-up">
       Kami menanamkan nilai-nilai kejujuran, disiplin, dan tanggung jawab dalam setiap aktivitas belajar.
       Bersama, kita membangun masa depan yang gemilang dan berdaya saing tinggi.
@@ -145,8 +144,8 @@
   </section>
 
   <!-- Contact Section -->
-  <section class="bg-soft-white py-16 text-center">
-    <h2 class="text-3xl font-bold text-logo mb-4 fade-up">Hubungi Kami</h2>
+  <section class="bg-soft-white py-16 text-center px-6">
+    <h2 class="text-2xl sm:text-3xl font-bold text-logo mb-4 fade-up">Hubungi Kami</h2>
     <p class="text-gray-700 fade-up">📍 Komplek Poris Indah Blok A No. 60-66, Cipondoh Indah, Kecamatan Cipondoh, Kota Tangerang, Banten, 15148</p>
     <p class="text-gray-700 mt-2 fade-up">📞 (021) 5570 3819 / (021) 5570 3848 | ✉️ porisindah.id@gmail.com</p>
     <a href="contact.html" class="mt-6 inline-block bg-[#003399] text-white px-6 py-2 rounded-full hover:bg-blue-800 transition fade-up">Hubungi Sekarang</a>
@@ -157,8 +156,27 @@
     <p>© 2025 SMP Poris Indah School. All Rights Reserved.</p>
   </footer>
 
-  <!-- Animasi Scroll -->
+  <!-- Scripts -->
   <script>
+    // Dropdown desktop
+    const dropdownButton = document.getElementById("dropdownButton");
+    const dropdownMenu = document.getElementById("dropdownMenu");
+    dropdownButton.addEventListener("click", () => { dropdownMenu.classList.toggle("hidden"); });
+    window.addEventListener("click", (e) => {
+      if (!dropdownButton.contains(e.target) && !dropdownMenu.contains(e.target)) dropdownMenu.classList.add("hidden");
+    });
+
+    // Hamburger mobile
+    const mobileMenuButton = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+    mobileMenuButton.addEventListener("click", () => { mobileMenu.classList.toggle("hidden"); });
+
+    // Mobile dropdown
+    const mobileDropdownButton = document.getElementById("mobile-dropdown-button");
+    const mobileDropdown = document.getElementById("mobile-dropdown");
+    mobileDropdownButton.addEventListener("click", () => { mobileDropdown.classList.toggle("hidden"); });
+
+    // Animasi scroll
     const fadeEls = document.querySelectorAll(".fade-up");
     const showOnScroll = () => {
       const trigger = window.innerHeight * 0.9;
@@ -172,4 +190,3 @@
   </script>
 </body>
 </html>
-
