@@ -37,15 +37,14 @@
   <header class="bg-soft-white shadow fixed top-0 left-0 w-full z-50">
     <div class="max-w-6xl mx-auto flex items-center justify-between py-4 px-6">
       <div class="flex items-center space-x-3">
-        <img src="foto/Logo SMP.png" alt="Logo SMP Poris Indah" class="h-10 w-auto" />
+        <img src="Logo SMP.png" alt="Logo SMP Poris Indah" class="h-10 w-auto" />
         <h1 class="text-xl font-semibold text-logo">SMP Poris Indah</h1>
       </div>
 
-      <nav>
-        <ul class="hidden md:flex items-center space-x-8 font-medium">
+      <!-- Desktop Menu -->
+      <nav class="hidden md:flex">
+        <ul class="items-center space-x-8 font-medium flex">
           <li><a href="index.html" class="hover:text-[#003399] transition">Home</a></li>
-
-          <!-- Dropdown Menu -->
           <li class="relative">
             <button id="dropdownButton" class="flex items-center hover:text-[#003399] transition focus:outline-none">
               SMP ▾
@@ -61,7 +60,6 @@
               <li><a href="achievement.html" class="block px-4 py-2">Achievement</a></li>
             </ul>
           </li>
-
           <li><a href="gallery.html" class="hover:text-[#003399] transition">Gallery</a></li>
           <li><a href="news.html" class="hover:text-[#003399] transition">News</a></li>
           <li><a href="events.html" class="hover:text-[#003399] transition">Events</a></li>
@@ -69,7 +67,41 @@
           <li><a href="contact.html" class="hover:text-[#003399] transition">Contact</a></li>
         </ul>
       </nav>
+
+      <!-- Hamburger Mobile -->
+      <div class="md:hidden">
+        <button id="mobile-menu-button" class="focus:outline-none">
+          <svg class="h-6 w-6 text-logo" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
     </div>
+
+    <!-- Mobile Menu -->
+    <nav id="mobile-menu" class="hidden md:hidden bg-soft-white">
+      <ul class="flex flex-col space-y-2 py-4 px-6 font-medium">
+        <li><a href="index.html" class="hover:text-[#003399] transition block">Home</a></li>
+        <li>
+          <button id="mobile-dropdown-button" class="w-full text-left flex justify-between items-center hover:text-[#003399] transition focus:outline-none">
+            SMP ▾
+          </button>
+          <ul id="mobile-dropdown" class="hidden flex-col bg-[#003399] text-white rounded-lg overflow-hidden mt-2">
+            <li><a href="about.html" class="block px-4 py-2">About Us</a></li>
+            <li><a href="curriculum.html" class="block px-4 py-2">Curriculum</a></li>
+            <li><a href="facility.html" class="block px-4 py-2">Facility</a></li>
+            <li><a href="extracurricular.html" class="block px-4 py-2">Extracurricular</a></li>
+            <li><a href="achievement.html" class="block px-4 py-2">Achievement</a></li>
+          </ul>
+        </li>
+        <li><a href="gallery.html" class="hover:text-[#003399] transition block">Gallery</a></li>
+        <li><a href="news.html" class="hover:text-[#003399] transition block">News</a></li>
+        <li><a href="events.html" class="hover:text-[#003399] transition block">Events</a></li>
+        <li><a href="career.html" class="hover:text-[#003399] transition block">Career</a></li>
+        <li><a href="contact.html" class="hover:text-[#003399] transition block">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
   <!-- HERO -->
@@ -85,7 +117,8 @@
         alt="Foto SMP Poris Indah"
         class="rounded-2xl shadow-lg w-full max-w-3xl object-cover"
       />
-    </div>
+  </div>
+
   <!-- ABOUT SECTION -->
   <section class="max-w-5xl mx-auto py-16 px-6 text-center leading-relaxed">
     <h3 class="text-3xl font-semibold text-logo mb-8 fade-up">Profil SMP Poris Indah</h3>
@@ -168,7 +201,7 @@
 
   <!-- SCRIPT -->
   <script>
-    // Dropdown
+    // Desktop Dropdown
     const dropdownButton = document.getElementById("dropdownButton");
     const dropdownMenu = document.getElementById("dropdownMenu");
     dropdownButton.addEventListener("click", () => {
@@ -180,7 +213,16 @@
       }
     });
 
-    // Animasi Scroll
+    // Mobile Menu Toggle
+    const mobileMenuButton = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+    mobileMenuButton.addEventListener("click", () => { mobileMenu.classList.toggle("hidden"); });
+
+    const mobileDropdownButton = document.getElementById("mobile-dropdown-button");
+    const mobileDropdown = document.getElementById("mobile-dropdown");
+    mobileDropdownButton.addEventListener("click", () => { mobileDropdown.classList.toggle("hidden"); });
+
+    // Scroll Animasi
     const fadeEls = document.querySelectorAll(".fade-up");
     const showOnScroll = () => {
       const trigger = window.innerHeight * 0.9;
@@ -194,5 +236,3 @@
   </script>
 </body>
 </html>
-
-
