@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  /* === DESKTOP DROPDOWN === */
   const dropdowns = document.querySelectorAll(".dropdown");
 
   dropdowns.forEach(drop => {
@@ -32,4 +33,24 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   });
+
+  /* === MOBILE MENU === */
+  const mobileMenuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  }
+
+  /* === MOBILE DROPDOWN === */
+  const mobileDropdownButton = document.getElementById("mobile-dropdown-button");
+  const mobileDropdown = document.getElementById("mobile-dropdown");
+
+  if (mobileDropdownButton && mobileDropdown) {
+    mobileDropdownButton.addEventListener("click", () => {
+      mobileDropdown.classList.toggle("hidden");
+    });
+  }
 });
