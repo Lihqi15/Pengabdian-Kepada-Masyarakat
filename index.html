@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SMP Poris Indah</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Warna biru logo */
+    .text-logo {
+      color: #003399;
+    }
+
+    /* Efek animasi teks */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Hero background */
+    .hero-bg {
+      background-image: url('SMP.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      position: relative;
+    }
+    .hero-bg::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgb(25, 0, 150);
+    }
+
+    /* Logo agar tidak crop */
+    .logo-img {
+      height: 60px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    /* Warna putih lembut (sesuai background logo) */
+    .bg-soft-white {
+      background-color: #f6f7f8;
+    }
+  </style>
+</head>
+<body class="font-sans text-gray-800 bg-soft-white">
+
+  <!-- Navbar -->
+<nav class="bg-soft-white shadow fixed top-0 left-0 w-full z-50">
+  <div class="max-w-6xl mx-auto flex items-center justify-between py-4 px-6">
+    <!-- Logo -->
+    <div class="flex items-center space-x-3">
+      <img src="foto/Logo SMP.png" alt="Logo SMP Poris Indah" class="h-10 w-auto" />
+      <h1 class="text-xl font-semibold text-logo">SMP Poris Indah</h1>
+    </div>
+
+    <!-- Menu -->
+    <ul class="hidden md:flex items-center space-x-8 font-medium text-gray-700">
+      <li><a href="index.html" class="hover:text-[#003399] transition">Home</a></li>
+
+      <!-- Dropdown -->
+      <li class="relative">
+        <button id="dropdownButton" class="flex items-center hover:text-[#003399] transition focus:outline-none">
+          SMP ▾
+        </button>
+        <ul
+          id="dropdownMenu"
+          class="absolute left-0 top-full hidden flex-col bg-[#003399] text-white rounded-lg shadow-lg mt-2 w-48 overflow-hidden dropdown-menu"
+        >
+          <li><a href="about.html" class="block px-4 py-2 hover:bg-[#002b80]">About Us</a></li>
+          <li><a href="curriculum.html" class="block px-4 py-2 hover:bg-[#002b80]">Curriculum</a></li>
+          <li><a href="facility.html" class="block px-4 py-2 hover:bg-[#002b80]">Facility</a></li>
+          <li><a href="extracurricular.html" class="block px-4 py-2 hover:bg-[#002b80]">Extracurricular</a></li>
+          <li><a href="achievement.html" class="block px-4 py-2 hover:bg-[#002b80]">Achievement</a></li>
+        </ul>
+      </li>
+
+      <li><a href="gallery.html" class="hover:text-[#003399] transition">Gallery</a></li>
+      <li><a href="news.html" class="hover:text-[#003399] transition">News</a></li>
+      <li><a href="events.html" class="hover:text-[#003399] transition">Events</a></li>
+      <li><a href="career.html" class="hover:text-[#003399] transition">Career</a></li>
+      <li><a href="contact.html" class="hover:text-[#003399] transition">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+  <!-- Dropdown Script -->
+  <script>
+  const dropdownButton = document.getElementById("dropdownButton");
+  const dropdownMenu = document.getElementById("dropdownMenu");
+
+  dropdownButton.addEventListener("click", () => {
+    dropdownMenu.classList.toggle("hidden");
+  });
+
+  window.addEventListener("click", (e) => {
+    if (!dropdownButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
+      dropdownMenu.classList.add("hidden");
+    }
+  });
+</script>
+
+  <!-- Hero Section -->
+  <section class="hero-bg text-center pt-40 pb-32 relative">
+  <div class="relative z-10">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4 fade-up text-white">
+      Selamat Datang di SMP Poris Indah
+    </h1>
+
+    <p class="max-w-2xl mx-auto text-lg fade-up text-white">
+      Sekolah yang berkomitmen menciptakan generasi cerdas, berkarakter, dan berakhlak mulia.
+    </p>
+  </div>
+</section>
+
+  <!-- About Section -->
+  <section class="max-w-5xl mx-auto py-16 px-6 bg-soft-white">
+    <h2 class="text-3xl font-bold text-center text-logo mb-8 fade-up">Tentang Kami</h2>
+    <p class="text-gray-700 leading-relaxed text-justify fade-up">
+      <strong>SMP Poris Indah</strong> adalah lembaga pendidikan yang berkomitmen membentuk peserta didik agar menjadi pribadi yang unggul, disiplin,
+      dan berakhlak mulia. Dengan suasana belajar yang kondusif serta dukungan guru profesional, kami mendorong siswa untuk terus berkembang dalam
+      pengetahuan, karakter, dan keterampilan abad 21.
+    </p>
+    <p class="text-gray-700 mt-6 leading-relaxed text-justify fade-up">
+      Kami percaya bahwa pendidikan bukan sekadar proses belajar di kelas, melainkan perjalanan untuk menemukan potensi terbaik dalam diri setiap siswa.
+      Melalui kegiatan akademik dan non-akademik, SMP Poris Indah berusaha menyiapkan generasi yang siap menghadapi tantangan masa depan dengan percaya diri.
+    </p>
+  </section>
+
+  <!-- Motto Section -->
+  <section class="bg-gradient-to-r from-blue-900 to-indigo-800 text-white py-16 text-center">
+    <h2 class="text-3xl font-bold mb-6 fade-up">Motto Sekolah</h2>
+    <p class="max-w-3xl mx-auto text-xl italic fade-up">“Belajar, Berakhlak, dan Berprestasi.”</p>
+    <p class="mt-4 max-w-2xl mx-auto text-indigo-200 fade-up">
+      Kami menanamkan nilai-nilai kejujuran, disiplin, dan tanggung jawab dalam setiap aktivitas belajar.
+      Bersama, kita membangun masa depan yang gemilang dan berdaya saing tinggi.
+    </p>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="bg-soft-white py-16 text-center">
+    <h2 class="text-3xl font-bold text-logo mb-4 fade-up">Hubungi Kami</h2>
+    <p class="text-gray-700 fade-up">📍 Komplek Poris Indah Blok A No. 60-66, Cipondoh Indah, Kecamatan Cipondoh, Kota Tangerang, Banten, 15148</p>
+    <p class="text-gray-700 mt-2 fade-up">📞 (021) 5570 3819 / (021) 5570 3848 | ✉️ porisindah.id@gmail.com</p>
+    <a href="contact.html" class="mt-6 inline-block bg-[#003399] text-white px-6 py-2 rounded-full hover:bg-blue-800 transition fade-up">Hubungi Sekarang</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#003399] text-white text-center py-6">
+    <p>© 2025 SMP Poris Indah School. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Animasi Scroll -->
+  <script>
+    const fadeEls = document.querySelectorAll(".fade-up");
+    const showOnScroll = () => {
+      const trigger = window.innerHeight * 0.9;
+      fadeEls.forEach(el => {
+        const rect = el.getBoundingClientRect().top;
+        if (rect < trigger) el.classList.add("show");
+      });
+    };
+    window.addEventListener("scroll", showOnScroll);
+    showOnScroll();
+  </script>
+</body>
+</html>

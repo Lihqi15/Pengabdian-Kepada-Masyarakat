@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | SMP Poris Indah</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Warna utama */
+    .bg-soft-white { background-color: #f6f7f8; }
+    .text-logo { color: #003399; }
+    .bg-logo { background-color: #003399; }
+
+    /* Biru lembut */
+    .bg-soft-blue { background-color: #e8ecfa; }
+
+    /* Dropdown */
+    .dropdown-menu a:hover {
+      background-color: #002b80;
+    }
+
+    /* Efek animasi teks */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body class="font-sans bg-soft-white text-gray-800">
+
+  <!-- HEADER -->
+  <header class="bg-soft-white shadow fixed top-0 left-0 w-full z-50">
+    <div class="max-w-6xl mx-auto flex items-center justify-between py-4 px-6">
+      <!-- Logo -->
+      <div class="flex items-center space-x-3">
+        <img src="foto/Logo SMP.png" alt="Logo SMP Poris Indah" class="h-10 w-auto" />
+        <h1 class="text-xl font-semibold text-logo">SMP Poris Indah</h1>
+      </div>
+
+      <!-- Navigation -->
+      <nav>
+        <ul class="hidden md:flex items-center space-x-8 font-medium">
+          <li><a href="index.html" class="hover:text-logo transition">Home</a></li>
+
+          <!-- Dropdown Menu -->
+          <li class="relative">
+            <button id="dropdownButton" class="flex items-center hover:text-logo transition focus:outline-none">
+              SMP ▾
+            </button>
+            <ul
+              id="dropdownMenu"
+              class="absolute left-0 top-full hidden flex-col bg-logo text-white rounded-lg shadow-lg mt-2 w-48 overflow-hidden dropdown-menu"
+            >
+              <li><a href="about.html" class="block px-4 py-2">About Us</a></li>
+              <li><a href="curriculum.html" class="block px-4 py-2">Curriculum</a></li>
+              <li><a href="facility.html" class="block px-4 py-2">Facility</a></li>
+              <li><a href="extracurricular.html" class="block px-4 py-2">Extracurricular</a></li>
+              <li><a href="achievement.html" class="block px-4 py-2">Achievement</a></li>
+            </ul>
+          </li>
+
+          <li><a href="gallery.html" class="hover:text-logo transition">Gallery</a></li>
+          <li><a href="news.html" class="hover:text-logo transition">News</a></li>
+          <li><a href="events.html" class="hover:text-logo transition">Events</a></li>
+          <li><a href="career.html" class="hover:text-logo transition">Career</a></li>
+          <li><a href="contact.html" class="text-logo font-semibold">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="bg-logo py-24 text-center text-white mt-16 fade-up">
+    <h2 class="text-4xl font-bold mb-2">Contact Us</h2>
+    <p class="text-indigo-100 text-lg">Hubungi kami untuk informasi lebih lanjut tentang SMP Poris Indah!</p>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="max-w-5xl mx-auto py-16 px-6 fade-up">
+    <h3 class="text-3xl font-semibold text-center text-logo mb-10">Get In Touch</h3>
+
+    <div class="bg-soft-white border border-gray-200 rounded-xl shadow-md p-8 hover:shadow-lg transition">
+      <div class="grid md:grid-cols-2 gap-10">
+        <!-- Left Info -->
+        <div class="space-y-6 fade-up">
+          <div>
+            <h4 class="text-xl font-bold text-gray-800 mb-2">Alamat Sekolah</h4>
+            <p class="text-gray-700">Perumahan Poris Indah Blok A No. 60–65,<br>Cipondoh, Tangerang 15148</p>
+          </div>
+
+          <div>
+            <h4 class="text-xl font-bold text-gray-800 mb-2">Telepon</h4>
+            <p class="text-gray-700">(021) 55703819</p>
+            <p class="text-gray-700">(021) 55703848</p>
+          </div>
+
+          <div>
+            <h4 class="text-xl font-bold text-gray-800 mb-2">Media Sosial</h4>
+            <div class="flex space-x-4">
+              <!-- Instagram -->
+              <a href="https://www.instagram.com/porisindah.sch/?hl=id" target="_blank" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="h-9 w-9">
+                  <radialGradient id="instaGrad" cx="19.38" cy="42.035" r="44.899" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#fd5" />
+                    <stop offset=".328" stop-color="#ff543e" />
+                    <stop offset=".348" stop-color="#fc5245" />
+                    <stop offset=".504" stop-color="#e64771" />
+                    <stop offset=".643" stop-color="#d53e91" />
+                    <stop offset=".761" stop-color="#cc39a4" />
+                    <stop offset=".841" stop-color="#c837ab" />
+                  </radialGradient>
+                  <path fill="url(#instaGrad)" d="M34 4H14C8.477 4 4 8.477 4 14v20c0 5.523 4.477 10 10 10h20c5.523 0 10-4.477 10-10V14c0-5.523-4.477-10-10-10z"/>
+                  <path fill="#fff" d="M24 15.5a8.5 8.5 0 1 0 0 17 8.5 8.5 0 0 0 0-17zm0 14a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11zm9.5-15.9a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/>
+                </svg>
+              </a>
+
+              <!-- YouTube -->
+              <a href="https://youtube.com/@porisindahschool?si=pFmki0CXcnYSOPvN" target="_blank" aria-label="YouTube">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="h-9 w-9">
+                  <path fill="#FF0000" d="M43.6 14.4s-.4-3.1-1.7-4.5c-1.6-1.7-3.4-1.7-4.3-1.8C32.1 8 24 8 24 8h-.1s-8.1 0-13.6.1c-.9.1-2.7.1-4.3 1.8C4.4 11.3 4 14.4 4 14.4S3.6 17.9 3.6 21.4v5.2c0 3.5.4 7 0 7s.4 3.1 1.7 4.5c1.6 1.7 3.7 1.6 4.6 1.8 3.4.3 14.1.3 14.1.3s8.1 0 13.6-.1c.9-.1 2.7-.1 4.3-1.8 1.3-1.3 1.7-4.5 1.7-4.5s.4-3.5.4-7v-5.2c0-3.5-.4-7-.4-7z"/>
+                  <path fill="#fff" d="M19 31.3v-14l12 7-12 7z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Form -->
+        <div class="fade-up">
+          <h4 class="text-xl font-bold text-gray-800 mb-4">Kirim Pesan</h4>
+          <form action="send_message.php" method="post" class="space-y-4">
+            <div>
+              <label for="name" class="block font-medium">Nama Lengkap</label>
+              <input type="text" id="name" name="name" placeholder="Nama Anda..."
+                class="w-full border border-gray-300 rounded-lg p-2 mt-1 focus:ring-2 focus:ring-logo focus:outline-none" required>
+            </div>
+
+            <div>
+              <label for="email" class="block font-medium">Email</label>
+              <input type="email" id="email" name="email" placeholder="example@mail.com"
+                class="w-full border border-gray-300 rounded-lg p-2 mt-1 focus:ring-2 focus:ring-logo focus:outline-none" required>
+            </div>
+
+            <div>
+              <label for="message" class="block font-medium">Pesan</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tulis pesan Anda..."
+                class="w-full border border-gray-300 rounded-lg p-2 mt-1 focus:ring-2 focus:ring-logo focus:outline-none" required></textarea>
+            </div>
+
+            <button type="submit"
+              class="bg-logo hover:bg-[#002b80] text-white px-6 py-2 rounded-lg transition focus:ring-2 focus:ring-logo focus:outline-none">
+              Kirim Pesan
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://api.whatsapp.com/send/?phone=%2B628118880356&text=Halo+SMP+Poris+Indah&type=phone_number&app_absent=0"
+     target="_blank"
+     class="fixed bottom-6 left-6 bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg transition duration-300 z-50"
+     aria-label="WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 fill-current" viewBox="0 0 24 24">
+      <path
+        d="M20.52 3.48A11.75 11.75 0 0 0 3.48 20.52L2 22l2.28-.64a11.75 11.75 0 0 0 16.24-16.24zM12 20a8 8 0 0 1-4.23-1.2l-.3-.18-2.5.7.7-2.4-.18-.31A8 8 0 1 1 12 20zm4.37-5.13c-.23-.12-1.35-.67-1.56-.75s-.36-.12-.52.12-.6.75-.74.9-.27.18-.5.06a6.46 6.46 0 0 1-1.9-1.17 7.2 7.2 0 0 1-1.33-1.64c-.14-.24 0-.37.11-.49s.25-.27.37-.4a1.64 1.64 0 0 0 .25-.41.43.43 0 0 0 0-.4c0-.12-.52-1.25-.72-1.72s-.4-.4-.52-.4h-.44a.85.85 0 0 0-.61.29 2.56 2.56 0 0 0-.8 1.9 4.46 4.46 0 0 0 1 2.38A10.3 10.3 0 0 0 12 16a4.71 4.71 0 0 0 2.45-.68 2.87 2.87 0 0 0 1.1-1.78c.07-.13.07-.25 0-.37s-.2-.12-.42-.25z"
+      />
+    </svg>
+  </a>
+
+  <!-- FOOTER -->
+  <footer class="bg-logo text-white text-center py-6 mt-12 fade-up">
+    <p>© 2025 SMP Poris Indah School. All Rights Reserved.</p>
+    <a href="#top" class="underline hover:text-indigo-200">Back to top ↑</a>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    // Dropdown
+    const dropdownButton = document.getElementById("dropdownButton");
+    const dropdownMenu = document.getElementById("dropdownMenu");
+    dropdownButton.addEventListener("click", () => {
+      dropdownMenu.classList.toggle("hidden");
+    });
+    window.addEventListener("click", (e) => {
+      if (!dropdownButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
+        dropdownMenu.classList.add("hidden");
+      }
+    });
+
+    // Animasi Scroll
+    const fadeEls = document.querySelectorAll(".fade-up");
+    const showOnScroll = () => {
+      const trigger = window.innerHeight * 0.9;
+      fadeEls.forEach(el => {
+        const rect = el.getBoundingClientRect().top;
+        if (rect < trigger) el.classList.add("show");
+      });
+    };
+    window.addEventListener("scroll", showOnScroll);
+    showOnScroll();
+  </script>
+</body>
+</html>
